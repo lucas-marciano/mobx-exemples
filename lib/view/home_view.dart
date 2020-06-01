@@ -8,7 +8,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final counterController = CounterController();
+  final controller = CounterController();
 
   @override
   Widget build(BuildContext context) {
@@ -17,25 +17,38 @@ class _HomeViewState extends State<HomeView> {
         title: Text("MobX"),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Observer(
-              builder: (_) => Text(
-                '${counterController.counter}',
-                style: Theme.of(context).textTheme.headline4,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('Formulário'),
+              Observer(
+                builder: (_) => TextField(
+                  decoration: InputDecoration(
+                    labelText: "Nome",
+                  ),
+                  onChanged: controller.changeName,
+                ),
               ),
-            ),
-          ],
+              Observer(
+                builder: (_) => TextField(
+                  decoration: InputDecoration(
+                    labelText: "Sobrenome",
+                  ),
+                  onChanged: controller.changeLastName,
+                ),
+              ),
+              SizedBox(height: 20),
+              Observer(
+                builder: (_) => Text(controller.completName),
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          counterController.increment();
-        },
+        onPressed: () {},
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.

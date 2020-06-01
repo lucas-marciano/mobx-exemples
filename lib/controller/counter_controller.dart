@@ -5,10 +5,21 @@ class CounterController = CounterControllerBase with _$CounterController;
 
 abstract class CounterControllerBase with Store {
   @observable
-  int counter = 0;
+  String name = '';
+
+  @observable
+  String lastName = '';
+
+  @computed
+  String get completName => "$name $lastName";
 
   @action
-  increment() {
-    counter++;
+  changeName(String name) {
+    this.name = name;
+  }
+
+  @action
+  changeLastName(String lastName) {
+    this.lastName = lastName;
   }
 }
