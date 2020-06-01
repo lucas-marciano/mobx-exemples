@@ -8,7 +8,7 @@ Projeto com exeplos de uso do mobX
 
 - [Projeto de formulário 'two way biding'](https://github.com/lucas-marciano/mobx-exemples/tree/feature/formulario);
 
-- [Projeto de formulário reativo](https://github.com/lucas-marciano/mobx-exemples/pull/new/feature/formulario-reativo);
+- [Projeto de formulário reativo](https://github.com/lucas-marciano/mobx-exemples/tree/feature/formulario-reativo);
 
 
 ## Commands
