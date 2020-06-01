@@ -9,18 +9,33 @@ part of 'counter_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$CounterController on CounterControllerBase, Store {
-  final _$counterAtom = Atom(name: 'CounterControllerBase.counter');
+  final _$nameAtom = Atom(name: 'CounterControllerBase.name');
 
   @override
-  int get counter {
-    _$counterAtom.reportRead();
-    return super.counter;
+  String get name {
+    _$nameAtom.reportRead();
+    return super.name;
   }
 
   @override
-  set counter(int value) {
-    _$counterAtom.reportWrite(value, super.counter, () {
-      super.counter = value;
+  set name(String value) {
+    _$nameAtom.reportWrite(value, super.name, () {
+      super.name = value;
+    });
+  }
+
+  final _$lastNameAtom = Atom(name: 'CounterControllerBase.lastName');
+
+  @override
+  String get lastName {
+    _$lastNameAtom.reportRead();
+    return super.lastName;
+  }
+
+  @override
+  set lastName(String value) {
+    _$lastNameAtom.reportWrite(value, super.lastName, () {
+      super.lastName = value;
     });
   }
 
@@ -28,11 +43,22 @@ mixin _$CounterController on CounterControllerBase, Store {
       ActionController(name: 'CounterControllerBase');
 
   @override
-  dynamic increment() {
+  dynamic changeName(String name) {
     final _$actionInfo = _$CounterControllerBaseActionController.startAction(
-        name: 'CounterControllerBase.increment');
+        name: 'CounterControllerBase.changeName');
     try {
-      return super.increment();
+      return super.changeName(name);
+    } finally {
+      _$CounterControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic changeLastName(String lastName) {
+    final _$actionInfo = _$CounterControllerBaseActionController.startAction(
+        name: 'CounterControllerBase.changeLastName');
+    try {
+      return super.changeLastName(lastName);
     } finally {
       _$CounterControllerBaseActionController.endAction(_$actionInfo);
     }
@@ -41,7 +67,8 @@ mixin _$CounterController on CounterControllerBase, Store {
   @override
   String toString() {
     return '''
-counter: ${counter}
+name: ${name},
+lastName: ${lastName}
     ''';
   }
 }
