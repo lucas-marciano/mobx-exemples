@@ -1,9 +1,9 @@
 import 'package:mobx/mobx.dart';
-part 'counter_controller.g.dart';
+part 'controller.g.dart';
 
-class CounterController = CounterControllerBase with _$CounterController;
+class Controller = ControllerBase with _$Controller;
 
-abstract class CounterControllerBase with Store {
+abstract class ControllerBase with Store {
   @observable
   String name = '';
 

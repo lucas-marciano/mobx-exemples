@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'counter_controller.dart';
+part of 'controller.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,8 +8,16 @@ part of 'counter_controller.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$CounterController on CounterControllerBase, Store {
-  final _$nameAtom = Atom(name: 'CounterControllerBase.name');
+mixin _$Controller on ControllerBase, Store {
+  Computed<String> _$completNameComputed;
+
+  @override
+  String get completName =>
+      (_$completNameComputed ??= Computed<String>(() => super.completName,
+              name: 'ControllerBase.completName'))
+          .value;
+
+  final _$nameAtom = Atom(name: 'ControllerBase.name');
 
   @override
   String get name {
@@ -24,7 +32,7 @@ mixin _$CounterController on CounterControllerBase, Store {
     });
   }
 
-  final _$lastNameAtom = Atom(name: 'CounterControllerBase.lastName');
+  final _$lastNameAtom = Atom(name: 'ControllerBase.lastName');
 
   @override
   String get lastName {
@@ -39,28 +47,28 @@ mixin _$CounterController on CounterControllerBase, Store {
     });
   }
 
-  final _$CounterControllerBaseActionController =
-      ActionController(name: 'CounterControllerBase');
+  final _$ControllerBaseActionController =
+      ActionController(name: 'ControllerBase');
 
   @override
   dynamic changeName(String name) {
-    final _$actionInfo = _$CounterControllerBaseActionController.startAction(
-        name: 'CounterControllerBase.changeName');
+    final _$actionInfo = _$ControllerBaseActionController.startAction(
+        name: 'ControllerBase.changeName');
     try {
       return super.changeName(name);
     } finally {
-      _$CounterControllerBaseActionController.endAction(_$actionInfo);
+      _$ControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   dynamic changeLastName(String lastName) {
-    final _$actionInfo = _$CounterControllerBaseActionController.startAction(
-        name: 'CounterControllerBase.changeLastName');
+    final _$actionInfo = _$ControllerBaseActionController.startAction(
+        name: 'ControllerBase.changeLastName');
     try {
       return super.changeLastName(lastName);
     } finally {
-      _$CounterControllerBaseActionController.endAction(_$actionInfo);
+      _$ControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 
@@ -68,7 +76,8 @@ mixin _$CounterController on CounterControllerBase, Store {
   String toString() {
     return '''
 name: ${name},
-lastName: ${lastName}
+lastName: ${lastName},
+completName: ${completName}
     ''';
   }
 }
