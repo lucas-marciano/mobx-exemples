@@ -41,4 +41,8 @@ abstract class _ControllerBase with Store {
     }
     return null;
   }
+
+  disposeData() {
+    //TODO: implement the dispose call to clean the data.
+  }
 }

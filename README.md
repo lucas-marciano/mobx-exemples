@@ -10,7 +10,7 @@ Projeto com exeplos de uso do mobX
 
 - [Projeto de formulário reativo](https://github.com/lucas-marciano/mobx-exemples/tree/feature/formulario-reativo);
 
-- [Projeto usando o Provider](https://github.com/lucas-marciano/mobx-exemples/tree/feature/formulario-reativo);
+- [Projeto usando o Provider](https://github.com/lucas-marciano/mobx-exemples/tree/feature/provider);
 
 ## Commands
 
