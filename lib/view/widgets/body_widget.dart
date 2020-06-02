@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:get_it/get_it.dart';
 import 'package:mobx_project/controller/controller.dart';
-import 'package:provider/provider.dart';
 
 class BodyWidget extends StatelessWidget {
   _textField({String label, onChanged, String Function() onError}) {
@@ -17,7 +17,7 @@ class BodyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Provider.of<Controller>(context);
+    final controller = GetIt.I.get<Controller>();
 
     return Padding(
       padding: const EdgeInsets.all(16.0),
