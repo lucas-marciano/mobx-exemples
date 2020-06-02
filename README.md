@@ -10,7 +10,6 @@ Projeto com exeplos de uso do mobX
 
 - [Projeto de formulário reativo](https://github.com/lucas-marciano/mobx-exemples/tree/feature/formulario-reativo);
 
-
 ## Commands
 
 - Watch do build runner `flutter pub run build_runner watch`;
